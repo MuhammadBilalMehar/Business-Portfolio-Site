@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Update WHATSAPP_NUMBER (international format, no + or 00)
      and the message shown when a visitor taps the button.
      ========================================================= */
-  const WHATSAPP_NUMBER = '923001234567'; // e.g. 92 300 1234567 -> 923001234567
+  const WHATSAPP_NUMBER = '923040011006'; // e.g. 92 300 1234567 -> 923001234567
   const WHATSAPP_MESSAGE = "Assalam-o-Alaikum! I'm interested in your Umrah/Hajj/travel packages. Could you please share more details?";
 
   function buildWhatsAppLink() {
