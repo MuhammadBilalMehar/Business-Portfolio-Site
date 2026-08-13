@@ -98,14 +98,14 @@
       <a id="nav-whatsapp" href="https://wa.me/923001234567?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-emerald-dark font-semibold text-sm px-5 py-2.5 rounded-full shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5">
         WhatsApp Us <i class="fa-brands fa-whatsapp text-base"></i>
       </a>
-      <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="lg:hidden w-10 h-10 flex items-center justify-center text-white text-xl">
+      <button id="menu-btn" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false" class="lg:hidden w-10 h-10 flex items-center justify-center text-white text-xl">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="lg:hidden fixed inset-0 top-0 bg-emerald-dark/98 backdrop-blur-sm h-screen w-full translate-x-full transition-transform duration-500 ease-in-out z-40">
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true" class="lg:hidden fixed inset-0 top-0 bg-emerald-dark/98 backdrop-blur-sm h-screen w-full translate-x-full transition-transform duration-500 ease-in-out z-40">
     <div class="flex justify-end p-6">
       <button id="close-menu" aria-label="Close menu" class="w-10 h-10 flex items-center justify-center text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
     </div>
@@ -126,7 +126,7 @@
 <!-- ============ HERO ============ -->
 <section id="home" class="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0">
-    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1920&auto=format&fit=crop" alt="Kaaba in Makkah at dusk" class="w-full h-full object-cover scale-105 hero-img">
+    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1920&auto=format&fit=crop" alt="Aerial view of a mosque at dusk" fetchpriority="high" decoding="async" class="w-full h-full object-cover scale-105 hero-img">
     <div class="absolute inset-0 bg-gradient-to-b from-emerald-dark/80 via-emerald-dark/70 to-charcoal/90"></div>
     <div class="absolute inset-0 text-gold/10 pattern-overlay" style="background-image:url(#geo-pattern)"></div>
   </div>
@@ -207,7 +207,7 @@
   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
     <div data-reveal class="reveal relative">
-      <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1000&auto=format&fit=crop" alt="Pilgrims walking near the Grand Mosque" class="rounded-3xl shadow-2xl w-full h-[420px] md:h-[520px] object-cover">
+      <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1000&auto=format&fit=crop" alt="Pilgrims walking near the Grand Mosque" loading="lazy" decoding="async" class="rounded-3xl shadow-2xl w-full h-[420px] md:h-[520px] object-cover">
       <div class="absolute -bottom-8 -right-4 md:-right-8 bg-white rounded-2xl shadow-xl px-7 py-5 flex items-center gap-4 border border-black/5">
         <span class="font-display text-3xl md:text-4xl font-bold text-emerald">10+</span>
         <span class="text-sm text-charcoal/70 leading-tight max-w-[110px]">Years serving travelers with trust</span>
@@ -351,7 +351,7 @@
     </div>
 
     <div data-reveal style="transition-delay:150ms" class="reveal relative">
-      <img src="https://images.unsplash.com/photo-1537444120404-fe9440e2a8c9?q=80&w=1000&auto=format&fit=crop" alt="Grand Mosque during Hajj season" class="rounded-3xl shadow-2xl w-full h-[420px] md:h-[500px] object-cover border-4 border-white/10">
+      <img src="https://images.unsplash.com/photo-1537444120404-fe9440e2a8c9?q=80&w=1000&auto=format&fit=crop" alt="Grand Mosque during Hajj season" loading="lazy" decoding="async" class="rounded-3xl shadow-2xl w-full h-[420px] md:h-[500px] object-cover border-4 border-white/10">
     </div>
   </div>
 </section>
@@ -471,7 +471,7 @@
 </section>
 
 <!-- Lightbox -->
-<div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center px-4">
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery" aria-hidden="true" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center px-4">
   <button id="lightbox-close" aria-label="Close gallery" class="absolute top-6 right-6 text-white text-3xl hover:text-gold transition-colors"><i class="fa-solid fa-xmark"></i></button>
   <button id="lightbox-prev" aria-label="Previous image" class="absolute left-4 md:left-8 text-white text-3xl hover:text-gold transition-colors"><i class="fa-solid fa-chevron-left"></i></button>
   <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl">
@@ -488,7 +488,7 @@
 
     <div id="faq-accordion" class="space-y-4">
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>What documents are required for Umrah?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -497,7 +497,7 @@
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>Do you provide Umrah visa assistance?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -506,7 +506,7 @@
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>What is included in your Umrah packages?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -515,7 +515,7 @@
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>Do you provide Hajj packages?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -524,7 +524,7 @@
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>Can I customize my travel package?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -533,7 +533,7 @@
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>Do your packages include airport transfers?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -542,7 +542,7 @@
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>Can you arrange family/group tours?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -551,7 +551,7 @@
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold" aria-expanded="false">
           <span>How can I request a quotation?</span>
           <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
         </button>
@@ -603,21 +603,21 @@
           <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-solid fa-phone text-gold"></i></span>
           <div>
             <p class="font-semibold mb-1">Phone</p>
-            <p class="text-sm text-white/70">+92 21 1234 5678</p>
+            <a href="tel:+922112345678" class="text-sm text-white/70 hover:text-gold transition-colors">+92 21 1234 5678</a>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-brands fa-whatsapp text-gold"></i></span>
           <div>
             <p class="font-semibold mb-1">WhatsApp</p>
-            <a href="https://wa.me/923001234567?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." id="contact-whatsapp" target="_blank" rel="noopener" class="text-sm text-white/70 hover:text-gold transition-colors">+92 300 1234567</a>
+            <a href="https://wa.me/923040011006?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." id="contact-whatsapp" target="_blank" rel="noopener" class="text-sm text-white/70 hover:text-gold transition-colors">+92 304 0011006</a>
           </div>
         </div>
         <div class="flex items-start gap-4">
           <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-solid fa-envelope text-gold"></i></span>
           <div>
             <p class="font-semibold mb-1">Email</p>
-            <p class="text-sm text-white/70">info@alnoortravel.com</p>
+            <a href="mailto:info@alnoortravel.com" class="text-sm text-white/70 hover:text-gold transition-colors">info@alnoortravel.com</a>
           </div>
         </div>
         <div class="flex items-start gap-4">
@@ -742,8 +742,8 @@
       <h4 class="font-semibold mb-5">Contact</h4>
       <ul class="space-y-3 text-sm text-white/60">
         <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold text-xs"></i>+92 21 1234 5678</li>
-        <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-gold text-xs"></i>+92 300 1234567</li>
-        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-gold text-xs"></i>info@alnoortravel.com</li>
+        <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-gold text-xs"></i><a id="footer-whatsapp" href="https://wa.me/923040011006" target="_blank" rel="noopener" class="hover:text-gold transition-colors">+92 304 0011006</a></li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-gold text-xs"></i><a href="mailto:info@alnoortravel.com" class="hover:text-gold transition-colors">info@alnoortravel.com</a></li>
         <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-gold text-xs mt-1"></i>Shahrah-e-Faisal, Karachi</li>
       </ul>
     </div>
@@ -759,7 +759,7 @@
 </footer>
 
 <!-- ============ FLOATING BUTTONS ============ -->
-<a id="whatsapp-float" href="https://wa.me/923001234567?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp"
+<a id="whatsapp-float" href="https://wa.me/923040011006?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp"
    class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-xl flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform">
   <i class="fa-brands fa-whatsapp"></i>
   <span aria-hidden="true" class="absolute inset-0 rounded-full bg-[#25D366] whatsapp-ping"></span>

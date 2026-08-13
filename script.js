@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Wire up every WhatsApp entry point (floating button, CTA button, contact section link)
   const waLink = buildWhatsAppLink();
-  ['whatsapp-float', 'cta-whatsapp', 'contact-whatsapp', 'nav-whatsapp'].forEach((id) => {
+  ['whatsapp-float', 'cta-whatsapp', 'contact-whatsapp', 'footer-whatsapp', 'nav-whatsapp'].forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.setAttribute('href', waLink);
   });
@@ -61,12 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function openMenu() {
     mobileMenu.classList.add('menu-open');
     menuBtn.setAttribute('aria-expanded', 'true');
+    mobileMenu.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    closeMenuBtn.focus();
   }
   function closeMenu() {
     mobileMenu.classList.remove('menu-open');
     menuBtn.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    menuBtn.focus();
   }
   menuBtn.addEventListener('click', openMenu);
   closeMenuBtn.addEventListener('click', closeMenu);
@@ -114,6 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
     const suffix = el.dataset.suffix || '';
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = target.toLocaleString() + suffix;
+      return;
+    }
     const duration = 1600;
     const start = performance.now();
 
@@ -196,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3 class="font-display text-lg font-semibold">${p.name}</h3>
             <span class="text-[10px] font-semibold uppercase tracking-wide text-gold-dark bg-gold/10 px-2.5 py-1 rounded-full">${p.category}</span>
           </div>
-          <div class="flex items-center gap-4 text-xs text-charcoal/60 mb-3">
+          <div class="package-meta flex items-center gap-4 text-xs text-charcoal/60 mb-3">
             <span class="flex items-center gap-1.5"><i class="fa-regular fa-calendar"></i>${p.duration}</span>
             <span class="flex items-center gap-1.5"><i class="fa-solid fa-hotel"></i>${p.hotel}</span>
           </div>
@@ -320,11 +328,14 @@ document.addEventListener('DOMContentLoaded', () => {
     updateLightboxImage();
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
+    lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    document.getElementById('lightbox-close').focus();
   }
   function closeLightbox() {
     lightbox.classList.add('hidden');
     lightbox.classList.remove('flex');
+    lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
   function updateLightboxImage() {
@@ -363,8 +374,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+      document.querySelectorAll('.faq-item').forEach((i) => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        question.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
@@ -391,6 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================================= */
   const form = document.getElementById('contact-form');
   const successBox = document.getElementById('form-success');
+  document.getElementById('travelDate').min = new Date().toISOString().split('T')[0];
 
   const validators = {
     fullName: (v) => v.trim().length >= 2 || 'Please enter your full name.',
