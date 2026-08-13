@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Noor Travel & Tours | Umrah, Hajj & Travel Packages</title>
+<meta name="description" content="Discover trusted Umrah, Hajj and international travel packages with Al Noor Travel & Tours. Comfortable journeys, reliable support and customized travel solutions.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Al Noor Travel & Tours | Umrah, Hajj & Travel Packages">
+<meta property="og:description" content="Premium Umrah, Hajj and international travel experiences designed around comfort, trust and care.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1200&auto=format&fit=crop">
+
+<!-- Structured data placeholder -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Al Noor Travel & Tours",
+  "description": "Premium Umrah, Hajj, international and domestic travel packages.",
+  "telephone": "+92-300-1234567",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Suite 402, Al Noor Tower, Shahrah-e-Faisal",
+    "addressLocality": "Karachi",
+    "addressCountry": "PK"
+  }
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          emerald: { DEFAULT: '#0B3D2E', dark: '#082A20', light: '#14543F' },
+          gold: { DEFAULT: '#C9A227', light: '#E8C766', dark: '#9C7D1A' },
+          charcoal: '#1B1B1B',
+          beige: '#F7F3EA',
+        },
+        fontFamily: {
+          display: ['"Playfair Display"', 'serif'],
+          body: ['Poppins', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-body text-charcoal bg-beige antialiased">
+
+<!-- ============ PATTERN DEFS (reused as background masks) ============ -->
+<svg width="0" height="0" class="absolute">
+  <defs>
+    <pattern id="geo-pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="currentColor" stroke-width="0.75"/>
+      <circle cx="30" cy="30" r="6" fill="none" stroke="currentColor" stroke-width="0.75"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- ============ NAVBAR ============ -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
+  <nav class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-20">
+    <a href="#home" class="flex items-center gap-2 group">
+      <span class="w-10 h-10 rounded-full bg-gold/90 flex items-center justify-center shadow-md">
+        <i class="fa-solid fa-kaaba text-emerald-dark text-lg"></i>
+      </span>
+      <span class="font-display text-xl md:text-2xl font-bold tracking-wide text-white nav-logo">AL NOOR<span class="text-gold"> TRAVEL</span></span>
+    </a>
+
+    <ul id="nav-links" class="hidden lg:flex items-center gap-8 font-medium text-sm tracking-wide">
+      <li><a href="#home" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="about">About Us</a></li>
+      <li><a href="#umrah" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="umrah">Umrah</a></li>
+      <li><a href="#hajj" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="hajj">Hajj</a></li>
+      <li><a href="#tours" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="tours">Tours</a></li>
+      <li><a href="#packages" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="packages">Packages</a></li>
+      <li><a href="#gallery" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="gallery">Gallery</a></li>
+      <li><a href="#contact" class="nav-link text-white/90 hover:text-gold transition-colors" data-section="contact">Contact</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <a id="nav-whatsapp" href="https://wa.me/923001234567?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." target="_blank" rel="noopener" class="hidden md:inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-emerald-dark font-semibold text-sm px-5 py-2.5 rounded-full shadow-md transition-all hover:shadow-lg hover:-translate-y-0.5">
+        WhatsApp Us <i class="fa-brands fa-whatsapp text-base"></i>
+      </a>
+      <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="lg:hidden w-10 h-10 flex items-center justify-center text-white text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden fixed inset-0 top-0 bg-emerald-dark/98 backdrop-blur-sm h-screen w-full translate-x-full transition-transform duration-500 ease-in-out z-40">
+    <div class="flex justify-end p-6">
+      <button id="close-menu" aria-label="Close menu" class="w-10 h-10 flex items-center justify-center text-white text-2xl"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="flex flex-col items-center gap-7 mt-8 font-display text-2xl text-white">
+      <li><a href="#home" class="mobile-link hover:text-gold transition-colors">Home</a></li>
+      <li><a href="#about" class="mobile-link hover:text-gold transition-colors">About Us</a></li>
+      <li><a href="#umrah" class="mobile-link hover:text-gold transition-colors">Umrah</a></li>
+      <li><a href="#hajj" class="mobile-link hover:text-gold transition-colors">Hajj</a></li>
+      <li><a href="#tours" class="mobile-link hover:text-gold transition-colors">Tours</a></li>
+      <li><a href="#packages" class="mobile-link hover:text-gold transition-colors">Packages</a></li>
+      <li><a href="#gallery" class="mobile-link hover:text-gold transition-colors">Gallery</a></li>
+      <li><a href="#contact" class="mobile-link hover:text-gold transition-colors">Contact</a></li>
+      <li class="mt-4"><a href="#contact" class="mobile-link bg-gold text-emerald-dark font-body font-semibold text-base px-8 py-3 rounded-full">Get a Quote</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1920&auto=format&fit=crop" alt="Kaaba in Makkah at dusk" class="w-full h-full object-cover scale-105 hero-img">
+    <div class="absolute inset-0 bg-gradient-to-b from-emerald-dark/80 via-emerald-dark/70 to-charcoal/90"></div>
+    <div class="absolute inset-0 text-gold/10 pattern-overlay" style="background-image:url(#geo-pattern)"></div>
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto text-center px-6 pt-16">
+    <span data-reveal class="reveal inline-flex items-center gap-2 bg-white/10 border border-gold/40 text-gold-light text-xs md:text-sm tracking-[0.2em] uppercase px-5 py-2 rounded-full backdrop-blur-sm">
+      <i class="fa-solid fa-star text-[10px]"></i> Your Trusted Travel Partner
+    </span>
+
+    <h1 data-reveal style="transition-delay:120ms" class="reveal font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mt-6">
+      Journey With <span class="text-gold">Faith.</span><br class="hidden sm:block"> Travel With <span class="text-gold">Confidence.</span>
+    </h1>
+
+    <p data-reveal style="transition-delay:240ms" class="reveal text-white/85 text-base md:text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+      Premium Umrah, Hajj and travel experiences designed to make your journey comfortable, memorable and spiritually fulfilling.
+    </p>
+
+    <div data-reveal style="transition-delay:360ms" class="reveal flex flex-col sm:flex-row items-center justify-center gap-4 mt-9">
+      <a href="#packages" class="w-full sm:w-auto text-center bg-gold hover:bg-gold-light text-emerald-dark font-semibold px-8 py-3.5 rounded-full shadow-lg transition-all hover:-translate-y-0.5">Explore Packages</a>
+      <a href="#contact" class="w-full sm:w-auto text-center border border-white/40 hover:border-gold hover:text-gold text-white font-semibold px-8 py-3.5 rounded-full transition-all">Plan Your Journey</a>
+    </div>
+
+    <p data-reveal style="transition-delay:480ms" class="reveal text-white/60 text-xs md:text-sm tracking-wide mt-10">
+      Trusted Travel Services &nbsp;•&nbsp; Comfortable Packages &nbsp;•&nbsp; Dedicated Support
+    </p>
+  </div>
+
+  <a href="#services" aria-label="Scroll down" class="absolute bottom-7 left-1/2 -translate-x-1/2 text-white/70 text-xl animate-bounce-slow">
+    <i class="fa-solid fa-chevron-down"></i>
+  </a>
+</section>
+
+<!-- ============ QUICK SERVICE CARDS ============ -->
+<section id="services" class="relative -mt-20 z-20 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <div data-reveal class="reveal card-hover bg-white rounded-2xl shadow-xl p-7 border border-black/5">
+      <div class="w-14 h-14 rounded-xl bg-emerald/10 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-kaaba text-emerald text-2xl"></i>
+      </div>
+      <h3 class="font-display text-xl font-semibold mb-2">Umrah Packages</h3>
+      <p class="text-sm text-charcoal/70 leading-relaxed mb-4">Complete Umrah travel solutions with accommodation, transportation and dedicated support.</p>
+      <a href="#umrah" class="inline-flex items-center gap-2 text-emerald font-semibold text-sm hover:text-gold transition-colors">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+
+    <div data-reveal style="transition-delay:100ms" class="reveal card-hover bg-white rounded-2xl shadow-xl p-7 border border-black/5">
+      <div class="w-14 h-14 rounded-xl bg-emerald/10 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-mosque text-emerald text-2xl"></i>
+      </div>
+      <h3 class="font-display text-xl font-semibold mb-2">Hajj Packages</h3>
+      <p class="text-sm text-charcoal/70 leading-relaxed mb-4">Carefully planned Hajj packages designed around comfort, convenience and spiritual focus.</p>
+      <a href="#hajj" class="inline-flex items-center gap-2 text-emerald font-semibold text-sm hover:text-gold transition-colors">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+
+    <div data-reveal style="transition-delay:200ms" class="reveal card-hover bg-white rounded-2xl shadow-xl p-7 border border-black/5">
+      <div class="w-14 h-14 rounded-xl bg-emerald/10 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-earth-asia text-emerald text-2xl"></i>
+      </div>
+      <h3 class="font-display text-xl font-semibold mb-2">International Tours</h3>
+      <p class="text-sm text-charcoal/70 leading-relaxed mb-4">Explore beautiful destinations around the world with professionally organized tours.</p>
+      <a href="#tours" class="inline-flex items-center gap-2 text-emerald font-semibold text-sm hover:text-gold transition-colors">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+
+    <div data-reveal style="transition-delay:300ms" class="reveal card-hover bg-white rounded-2xl shadow-xl p-7 border border-black/5">
+      <div class="w-14 h-14 rounded-xl bg-emerald/10 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-map-location-dot text-emerald text-2xl"></i>
+      </div>
+      <h3 class="font-display text-xl font-semibold mb-2">Custom Tours</h3>
+      <p class="text-sm text-charcoal/70 leading-relaxed mb-4">Personalized travel experiences designed according to your destination, budget and schedule.</p>
+      <a href="#packages" class="inline-flex items-center gap-2 text-emerald font-semibold text-sm hover:text-gold transition-colors">Learn More <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="py-28 md:py-32 px-5 md:px-8 overflow-hidden">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+
+    <div data-reveal class="reveal relative">
+      <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1000&auto=format&fit=crop" alt="Pilgrims walking near the Grand Mosque" class="rounded-3xl shadow-2xl w-full h-[420px] md:h-[520px] object-cover">
+      <div class="absolute -bottom-8 -right-4 md:-right-8 bg-white rounded-2xl shadow-xl px-7 py-5 flex items-center gap-4 border border-black/5">
+        <span class="font-display text-3xl md:text-4xl font-bold text-emerald">10+</span>
+        <span class="text-sm text-charcoal/70 leading-tight max-w-[110px]">Years serving travelers with trust</span>
+      </div>
+    </div>
+
+    <div data-reveal style="transition-delay:150ms" class="reveal">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">About Al Noor</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6 leading-tight">Travel With People You Can Trust</h2>
+      <p class="text-charcoal/70 leading-relaxed mb-8">
+        For over a decade, Al Noor Travel & Tours has guided families and individuals through some of the most meaningful journeys of their lives — from the sacred paths of Makkah and Madinah to the world's most beautiful destinations. Our mission is simple: handle every detail with care, so you can focus on the journey itself.
+      </p>
+
+      <ul class="grid sm:grid-cols-2 gap-4 mb-9">
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-charcoal/80">Experienced Travel Professionals</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-charcoal/80">Carefully Selected Hotels</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-charcoal/80">Reliable Transportation</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-charcoal/80">Personalized Customer Support</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-charcoal/80">Transparent Packages</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-charcoal/80">Complete Travel Assistance</span></li>
+      </ul>
+
+      <a href="#contact" class="inline-flex items-center gap-2 bg-emerald hover:bg-emerald-dark text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5 shadow-md">
+        Discover Our Story <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATISTICS ============ -->
+<section class="relative bg-emerald-dark py-20 px-5 md:px-8 text-white overflow-hidden">
+  <div class="absolute inset-0 text-gold/10 pattern-overlay" style="background-image:url(#geo-pattern)"></div>
+  <div class="relative max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+    <div data-reveal class="reveal">
+      <span class="counter font-display text-4xl md:text-5xl font-bold text-gold block" data-target="10" data-suffix="+">0</span>
+      <p class="text-white/70 text-sm mt-2 tracking-wide">Years of Experience</p>
+    </div>
+    <div data-reveal style="transition-delay:100ms" class="reveal">
+      <span class="counter font-display text-4xl md:text-5xl font-bold text-gold block" data-target="5000" data-suffix="+">0</span>
+      <p class="text-white/70 text-sm mt-2 tracking-wide">Happy Travelers</p>
+    </div>
+    <div data-reveal style="transition-delay:200ms" class="reveal">
+      <span class="counter font-display text-4xl md:text-5xl font-bold text-gold block" data-target="50" data-suffix="+">0</span>
+      <p class="text-white/70 text-sm mt-2 tracking-wide">Travel Destinations</p>
+    </div>
+    <div data-reveal style="transition-delay:300ms" class="reveal">
+      <span class="counter font-display text-4xl md:text-5xl font-bold text-gold block" data-target="98" data-suffix="%">0</span>
+      <p class="text-white/70 text-sm mt-2 tracking-wide">Customer Satisfaction</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UMRAH PACKAGES ============ -->
+<section id="umrah" class="py-28 md:py-32 px-5 md:px-8 bg-beige">
+  <div class="max-w-7xl mx-auto">
+    <div data-reveal class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">Umrah</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-5">Begin Your Sacred Journey</h2>
+      <p class="text-charcoal/70 leading-relaxed">Choose from carefully designed Umrah packages created for comfort, convenience and peace of mind.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div data-reveal class="reveal card-hover bg-white rounded-3xl shadow-lg border border-black/5 overflow-hidden flex flex-col">
+        <div class="p-8 flex-1 flex flex-col">
+          <h3 class="font-display text-2xl font-semibold mb-1">Economy Umrah</h3>
+          <p class="text-xs text-charcoal/50 mb-6">Simple, reliable & comfortable</p>
+          <ul class="space-y-3 text-sm text-charcoal/75 mb-8 flex-1">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Comfortable Accommodation</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Airport Transfers</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Transportation</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Visa Assistance</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Guided Support</li>
+          </ul>
+          <a href="#contact" class="text-center w-full bg-emerald/10 hover:bg-emerald hover:text-white text-emerald font-semibold py-3 rounded-full transition-all">View Package</a>
+        </div>
+      </div>
+
+      <div data-reveal style="transition-delay:120ms" class="reveal relative card-hover bg-emerald-dark text-white rounded-3xl shadow-2xl overflow-hidden flex flex-col scale-[1.03]">
+        <span class="absolute top-5 right-5 bg-gold text-emerald-dark text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">Most Popular</span>
+        <div class="p-8 flex-1 flex flex-col">
+          <h3 class="font-display text-2xl font-semibold mb-1">Premium Umrah</h3>
+          <p class="text-xs text-white/50 mb-6">Balanced comfort & value</p>
+          <ul class="space-y-3 text-sm text-white/85 mb-8 flex-1">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i>Premium Hotel</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i>Private/Comfortable Transport</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i>Visa Assistance</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i>Airport Transfers</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i>Dedicated Support</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-gold mt-1"></i>Guided Assistance</li>
+          </ul>
+          <a href="#contact" class="text-center w-full bg-gold hover:bg-gold-light text-emerald-dark font-semibold py-3 rounded-full transition-all">View Package</a>
+        </div>
+      </div>
+
+      <div data-reveal style="transition-delay:240ms" class="reveal card-hover bg-white rounded-3xl shadow-lg border border-black/5 overflow-hidden flex flex-col">
+        <div class="p-8 flex-1 flex flex-col">
+          <h3 class="font-display text-2xl font-semibold mb-1">Luxury Umrah</h3>
+          <p class="text-xs text-charcoal/50 mb-6">Exclusive & elevated experience</p>
+          <ul class="space-y-3 text-sm text-charcoal/75 mb-8 flex-1">
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Luxury Accommodation</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Premium Transportation</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Visa Assistance</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Personalized Support</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Airport Transfers</li>
+            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald mt-1"></i>Exclusive Assistance</li>
+          </ul>
+          <a href="#contact" class="text-center w-full bg-emerald/10 hover:bg-emerald hover:text-white text-emerald font-semibold py-3 rounded-full transition-all">View Package</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p data-reveal class="reveal text-center text-xs text-charcoal/50 mt-10 italic">
+      Package availability, hotel details and prices may vary depending on travel dates.
+    </p>
+  </div>
+</section>
+
+<!-- ============ HAJJ ============ -->
+<section id="hajj" class="relative py-28 md:py-32 px-5 md:px-8 bg-emerald-dark text-white overflow-hidden">
+  <div class="absolute inset-0 text-gold/[0.07] pattern-overlay" style="background-image:url(#geo-pattern)"></div>
+  <div class="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+    <div data-reveal class="reveal">
+      <span class="text-gold font-semibold tracking-[0.2em] text-xs uppercase">Hajj</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-6 leading-tight">Prepare For Your Hajj Journey</h2>
+      <p class="text-white/75 leading-relaxed mb-8">
+        Hajj is a journey of a lifetime, and every detail matters. Our experienced team manages the planning and logistics with care and precision, so you can focus fully on this sacred experience.
+      </p>
+      <ul class="grid sm:grid-cols-2 gap-4 mb-9">
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-white/85">Hajj Package Planning</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-white/85">Visa Assistance</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-white/85">Accommodation</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-white/85">Transportation</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-white/85">Travel Guidance</span></li>
+        <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-gold mt-1"></i><span class="text-sm text-white/85">Dedicated Support</span></li>
+      </ul>
+      <a href="#contact" class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-emerald-dark font-semibold px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5 shadow-md">
+        Explore Hajj Packages <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+    <div data-reveal style="transition-delay:150ms" class="reveal relative">
+      <img src="https://images.unsplash.com/photo-1537444120404-fe9440e2a8c9?q=80&w=1000&auto=format&fit=crop" alt="Grand Mosque during Hajj season" class="rounded-3xl shadow-2xl w-full h-[420px] md:h-[500px] object-cover border-4 border-white/10">
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTERNATIONAL TOURS ============ -->
+<section id="tours" class="py-28 md:py-32 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div data-reveal class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">Destinations</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-5">Discover The World</h2>
+      <p class="text-charcoal/70 leading-relaxed">From vibrant cities to serene coastlines, explore our most loved international destinations.</p>
+    </div>
+
+    <div id="destination-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Populated by JS with data below -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PACKAGES ============ -->
+<section id="packages" class="py-28 md:py-32 px-5 md:px-8 bg-beige">
+  <div class="max-w-7xl mx-auto">
+    <div data-reveal class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">Packages</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-5">Featured Travel Packages</h2>
+      <p class="text-charcoal/70 leading-relaxed">Handpicked packages with everything arranged — just pack your bags.</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+      <button class="filter-btn active-filter" data-filter="all">All Packages</button>
+      <button class="filter-btn" data-filter="international">International</button>
+      <button class="filter-btn" data-filter="umrah">Umrah</button>
+      <button class="filter-btn" data-filter="domestic">Domestic</button>
+    </div>
+
+    <div id="package-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="py-28 md:py-32 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div data-reveal class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">Why Al Noor</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-5">Why Choose Us</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div data-reveal class="reveal p-8 rounded-2xl border border-black/5 hover:border-gold/50 hover:shadow-lg transition-all">
+        <i class="fa-solid fa-award text-emerald text-3xl mb-4"></i>
+        <h3 class="font-display text-lg font-semibold mb-2">Trusted Experience</h3>
+        <p class="text-sm text-charcoal/70 leading-relaxed">Years of experience helping travelers plan important journeys.</p>
+      </div>
+      <div data-reveal style="transition-delay:80ms" class="reveal p-8 rounded-2xl border border-black/5 hover:border-gold/50 hover:shadow-lg transition-all">
+        <i class="fa-solid fa-file-invoice-dollar text-emerald text-3xl mb-4"></i>
+        <h3 class="font-display text-lg font-semibold mb-2">Transparent Packages</h3>
+        <p class="text-sm text-charcoal/70 leading-relaxed">Clear package information without unnecessary complexity.</p>
+      </div>
+      <div data-reveal style="transition-delay:160ms" class="reveal p-8 rounded-2xl border border-black/5 hover:border-gold/50 hover:shadow-lg transition-all">
+        <i class="fa-solid fa-hotel text-emerald text-3xl mb-4"></i>
+        <h3 class="font-display text-lg font-semibold mb-2">Comfortable Travel</h3>
+        <p class="text-sm text-charcoal/70 leading-relaxed">Carefully selected accommodation and transportation.</p>
+      </div>
+      <div data-reveal class="reveal p-8 rounded-2xl border border-black/5 hover:border-gold/50 hover:shadow-lg transition-all">
+        <i class="fa-solid fa-headset text-emerald text-3xl mb-4"></i>
+        <h3 class="font-display text-lg font-semibold mb-2">Dedicated Support</h3>
+        <p class="text-sm text-charcoal/70 leading-relaxed">Support before and during your journey.</p>
+      </div>
+      <div data-reveal style="transition-delay:80ms" class="reveal p-8 rounded-2xl border border-black/5 hover:border-gold/50 hover:shadow-lg transition-all">
+        <i class="fa-solid fa-sliders text-emerald text-3xl mb-4"></i>
+        <h3 class="font-display text-lg font-semibold mb-2">Customized Solutions</h3>
+        <p class="text-sm text-charcoal/70 leading-relaxed">Travel packages designed around your needs.</p>
+      </div>
+      <div data-reveal style="transition-delay:160ms" class="reveal p-8 rounded-2xl border border-black/5 hover:border-gold/50 hover:shadow-lg transition-all">
+        <i class="fa-solid fa-hands-holding-circle text-emerald text-3xl mb-4"></i>
+        <h3 class="font-display text-lg font-semibold mb-2">Complete Assistance</h3>
+        <p class="text-sm text-charcoal/70 leading-relaxed">Travel planning, documentation and other support services.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="relative py-28 md:py-32 px-5 md:px-8 bg-emerald-dark text-white overflow-hidden">
+  <div class="absolute inset-0 text-gold/[0.07] pattern-overlay" style="background-image:url(#geo-pattern)"></div>
+  <div class="relative max-w-3xl mx-auto text-center">
+    <span class="text-gold font-semibold tracking-[0.2em] text-xs uppercase">Testimonials</span>
+    <h2 class="font-display text-3xl md:text-4xl font-bold mt-3 mb-14">What Our Travelers Say</h2>
+
+    <div id="testimonial-track" class="relative min-h-[240px]">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="flex items-center justify-center gap-6 mt-10">
+      <button id="testi-prev" aria-label="Previous testimonial" class="w-11 h-11 rounded-full border border-white/25 hover:border-gold hover:text-gold transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-left"></i></button>
+      <div id="testi-dots" class="flex items-center gap-2"></div>
+      <button id="testi-next" aria-label="Next testimonial" class="w-11 h-11 rounded-full border border-white/25 hover:border-gold hover:text-gold transition-all flex items-center justify-center"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="py-28 md:py-32 px-5 md:px-8 bg-beige">
+  <div class="max-w-7xl mx-auto">
+    <div data-reveal class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">Gallery</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-5">Moments From The Journey</h2>
+    </div>
+
+    <div id="gallery-grid" class="columns-2 md:columns-3 gap-4 space-y-4">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/95 z-[100] hidden items-center justify-center px-4">
+  <button id="lightbox-close" aria-label="Close gallery" class="absolute top-6 right-6 text-white text-3xl hover:text-gold transition-colors"><i class="fa-solid fa-xmark"></i></button>
+  <button id="lightbox-prev" aria-label="Previous image" class="absolute left-4 md:left-8 text-white text-3xl hover:text-gold transition-colors"><i class="fa-solid fa-chevron-left"></i></button>
+  <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-full rounded-lg shadow-2xl">
+  <button id="lightbox-next" aria-label="Next image" class="absolute right-4 md:right-8 text-white text-3xl hover:text-gold transition-colors"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<!-- ============ FAQ ============ -->
+<section class="py-28 md:py-32 px-5 md:px-8">
+  <div class="max-w-3xl mx-auto">
+    <div data-reveal class="reveal text-center mb-16">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">FAQ</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3">Frequently Asked Questions</h2>
+    </div>
+
+    <div id="faq-accordion" class="space-y-4">
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>What documents are required for Umrah?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">You'll need a valid passport (with at least six months validity), recent passport-sized photographs, and a completed visa application. Our team guides you through the full checklist based on your travel dates.</p>
+        </div>
+      </div>
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>Do you provide Umrah visa assistance?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">Yes, full visa assistance is included in every Umrah package, from documentation to submission and follow-up.</p>
+        </div>
+      </div>
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>What is included in your Umrah packages?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">Accommodation, transportation, airport transfers, visa assistance and dedicated support are included across all package tiers. Premium and Luxury tiers add enhanced hotels and personalized services.</p>
+        </div>
+      </div>
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>Do you provide Hajj packages?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">Yes, we offer full Hajj packages covering planning, visas, accommodation, transportation and on-ground guidance throughout the journey.</p>
+        </div>
+      </div>
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>Can I customize my travel package?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">Absolutely. Our custom tours are built around your preferred destination, budget, schedule and group size.</p>
+        </div>
+      </div>
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>Do your packages include airport transfers?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">Yes, airport transfers are included as standard in all Umrah, Hajj and international tour packages.</p>
+        </div>
+      </div>
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>Can you arrange family/group tours?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">Yes, we regularly arrange travel for families and larger groups, with accommodation and transport suited to group sizes.</p>
+        </div>
+      </div>
+      <div class="faq-item bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
+        <button class="faq-question w-full flex items-center justify-between text-left px-6 py-5 font-semibold">
+          <span>How can I request a quotation?</span>
+          <i class="fa-solid fa-chevron-down text-gold transition-transform"></i>
+        </button>
+        <div class="faq-answer px-6 text-sm text-charcoal/70 leading-relaxed">
+          <p class="pb-5">Simply fill out the contact form below, call us, or message us directly on WhatsApp — we typically respond within a few hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="relative py-24 px-5 md:px-8 bg-gradient-to-br from-emerald via-emerald-dark to-charcoal text-white overflow-hidden">
+  <div class="absolute inset-0 text-gold/[0.08] pattern-overlay" style="background-image:url(#geo-pattern)"></div>
+  <div data-reveal class="reveal relative max-w-3xl mx-auto text-center">
+    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-5">Ready To Start Your Journey?</h2>
+    <p class="text-white/80 leading-relaxed mb-10 max-w-xl mx-auto">Whether you're planning a sacred pilgrimage or your next unforgettable adventure, we're here to help.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#contact" class="w-full sm:w-auto bg-gold hover:bg-gold-light text-emerald-dark font-semibold px-8 py-3.5 rounded-full shadow-lg transition-all hover:-translate-y-0.5">Get a Free Quote</a>
+      <a href="#contact" class="w-full sm:w-auto border border-white/40 hover:border-gold hover:text-gold font-semibold px-8 py-3.5 rounded-full transition-all">Contact Us</a>
+      <a id="cta-whatsapp" href="https://wa.me/923001234567?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] font-semibold px-8 py-3.5 rounded-full shadow-lg transition-all hover:-translate-y-0.5">
+        <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-28 md:py-32 px-5 md:px-8 bg-beige">
+  <div class="max-w-7xl mx-auto">
+    <div data-reveal class="reveal text-center max-w-2xl mx-auto mb-16">
+      <span class="text-gold-dark font-semibold tracking-[0.2em] text-xs uppercase">Contact</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold mt-3 mb-5">Get In Touch</h2>
+      <p class="text-charcoal/70 leading-relaxed">Have a question or ready to plan your journey? Reach out and our team will respond promptly.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-10">
+
+      <!-- Contact info -->
+      <div data-reveal class="reveal lg:col-span-2 bg-emerald-dark text-white rounded-3xl p-9 flex flex-col gap-7">
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-solid fa-location-dot text-gold"></i></span>
+          <div>
+            <p class="font-semibold mb-1">Our Office</p>
+            <p class="text-sm text-white/70 leading-relaxed">Suite 402, Al Noor Tower, Shahrah-e-Faisal, Karachi, Pakistan</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-solid fa-phone text-gold"></i></span>
+          <div>
+            <p class="font-semibold mb-1">Phone</p>
+            <p class="text-sm text-white/70">+92 21 1234 5678</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-brands fa-whatsapp text-gold"></i></span>
+          <div>
+            <p class="font-semibold mb-1">WhatsApp</p>
+            <a href="https://wa.me/923001234567?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." id="contact-whatsapp" target="_blank" rel="noopener" class="text-sm text-white/70 hover:text-gold transition-colors">+92 300 1234567</a>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-solid fa-envelope text-gold"></i></span>
+          <div>
+            <p class="font-semibold mb-1">Email</p>
+            <p class="text-sm text-white/70">info@alnoortravel.com</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-11 h-11 shrink-0 rounded-full bg-gold/15 flex items-center justify-center"><i class="fa-solid fa-clock text-gold"></i></span>
+          <div>
+            <p class="font-semibold mb-1">Business Hours</p>
+            <p class="text-sm text-white/70">Mon – Sat: 9:00 AM – 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div data-reveal style="transition-delay:120ms" class="reveal lg:col-span-3 bg-white rounded-3xl shadow-lg border border-black/5 p-8 md:p-10">
+        <form id="contact-form" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="fullName" class="block text-sm font-medium mb-1.5">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Your full name" class="form-input" required>
+              <p class="form-error"></p>
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium mb-1.5">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="03XX XXXXXXX" class="form-input" required>
+              <p class="form-error"></p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <label for="email" class="block text-sm font-medium mb-1.5">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" class="form-input" required>
+            <p class="form-error"></p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5 mt-5">
+            <div>
+              <label for="serviceType" class="block text-sm font-medium mb-1.5">Service Type</label>
+              <select id="serviceType" name="serviceType" class="form-input" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="Umrah">Umrah</option>
+                <option value="Hajj">Hajj</option>
+                <option value="International Tour">International Tour</option>
+                <option value="Domestic Tour">Domestic Tour</option>
+                <option value="Custom Package">Custom Package</option>
+              </select>
+              <p class="form-error"></p>
+            </div>
+            <div>
+              <label for="travelDate" class="block text-sm font-medium mb-1.5">Preferred Travel Date</label>
+              <input type="date" id="travelDate" name="travelDate" class="form-input" required>
+              <p class="form-error"></p>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <label for="travelers" class="block text-sm font-medium mb-1.5">Number of Travelers</label>
+            <input type="number" id="travelers" name="travelers" min="1" placeholder="e.g. 2" class="form-input" required>
+            <p class="form-error"></p>
+          </div>
+
+          <div class="mt-5">
+            <label for="message" class="block text-sm font-medium mb-1.5">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us more about your trip..." class="form-input resize-none" required></textarea>
+            <p class="form-error"></p>
+          </div>
+
+          <button type="submit" class="mt-7 w-full bg-emerald hover:bg-emerald-dark text-white font-semibold py-3.5 rounded-full transition-all shadow-md hover:-translate-y-0.5">
+            Request a Quote
+          </button>
+
+          <div id="form-success" class="hidden mt-5 bg-emerald/10 border border-emerald/30 text-emerald-dark text-sm rounded-xl px-5 py-4 items-center gap-3">
+            <i class="fa-solid fa-circle-check text-emerald text-lg"></i>
+            <span>Thank you! Your request has been received. Our team will contact you shortly.</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-charcoal text-white pt-20 pb-8 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-14 border-b border-white/10">
+
+    <div>
+      <a href="#home" class="flex items-center gap-2 mb-4">
+        <span class="w-9 h-9 rounded-full bg-gold/90 flex items-center justify-center"><i class="fa-solid fa-kaaba text-emerald-dark text-sm"></i></span>
+        <span class="font-display text-lg font-bold">AL NOOR<span class="text-gold"> TRAVEL</span></span>
+      </a>
+      <p class="text-sm text-white/60 leading-relaxed mb-5">Trusted Umrah, Hajj and international travel experiences — designed with care, delivered with confidence.</p>
+      <div class="flex items-center gap-3">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-emerald-dark flex items-center justify-center transition-all"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-emerald-dark flex items-center justify-center transition-all"><i class="fa-brands fa-instagram text-sm"></i></a>
+        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-emerald-dark flex items-center justify-center transition-all"><i class="fa-brands fa-youtube text-sm"></i></a>
+        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-emerald-dark flex items-center justify-center transition-all"><i class="fa-brands fa-tiktok text-sm"></i></a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-semibold mb-5">Quick Links</h4>
+      <ul class="space-y-3 text-sm text-white/60">
+        <li><a href="#home" class="hover:text-gold transition-colors">Home</a></li>
+        <li><a href="#about" class="hover:text-gold transition-colors">About</a></li>
+        <li><a href="#umrah" class="hover:text-gold transition-colors">Umrah</a></li>
+        <li><a href="#hajj" class="hover:text-gold transition-colors">Hajj</a></li>
+        <li><a href="#tours" class="hover:text-gold transition-colors">Tours</a></li>
+        <li><a href="#contact" class="hover:text-gold transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-semibold mb-5">Services</h4>
+      <ul class="space-y-3 text-sm text-white/60">
+        <li><a href="#umrah" class="hover:text-gold transition-colors">Umrah Packages</a></li>
+        <li><a href="#hajj" class="hover:text-gold transition-colors">Hajj Packages</a></li>
+        <li><a href="#tours" class="hover:text-gold transition-colors">International Tours</a></li>
+        <li><a href="#packages" class="hover:text-gold transition-colors">Custom Tours</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-semibold mb-5">Contact</h4>
+      <ul class="space-y-3 text-sm text-white/60">
+        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-gold text-xs"></i>+92 21 1234 5678</li>
+        <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-gold text-xs"></i>+92 300 1234567</li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-gold text-xs"></i>info@alnoortravel.com</li>
+        <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot text-gold text-xs mt-1"></i>Shahrah-e-Faisal, Karachi</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-white/50">
+    <p>© 2026 Al Noor Travel & Tours. All Rights Reserved.</p>
+    <div class="flex items-center gap-6">
+      <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+      <a href="#" class="hover:text-gold transition-colors">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING BUTTONS ============ -->
+<a id="whatsapp-float" href="https://wa.me/923001234567?text=Assalam-o-Alaikum%21%20I%27m%20interested%20in%20your%20Umrah%2FHajj%2Ftravel%20packages." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp"
+   class="fixed bottom-6 left-6 z-40 w-14 h-14 rounded-full bg-[#25D366] shadow-xl flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span aria-hidden="true" class="absolute inset-0 rounded-full bg-[#25D366] whatsapp-ping"></span>
+</a>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-emerald text-white shadow-xl flex items-center justify-center opacity-0 pointer-events-none translate-y-4 transition-all duration-300">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Notification toast -->
+<div id="toast" class="fixed top-24 right-5 z-[110] max-w-xs bg-white shadow-2xl rounded-xl px-5 py-4 flex items-start gap-3 border-l-4 border-emerald translate-x-[130%] transition-transform duration-500"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

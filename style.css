@@ -1,0 +1,337 @@
+/* ===========================================================
+   Al Noor Travel & Tours — custom styles
+   Tailwind handles utility classes; this file covers
+   animations, patterns, and components Tailwind can't express.
+   =========================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Retain a deliberate, well-proportioned visual if a third-party photo is unavailable. */
+img.image-fallback {
+  background: linear-gradient(135deg, #0B3D2E 0%, #14543F 55%, #C9A227 100%);
+  color: transparent;
+}
+
+/* ---------- Navbar states ---------- */
+#navbar.scrolled {
+  background-color: rgba(8, 42, 32, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #C9A227;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active-link::after {
+  width: 100%;
+}
+.nav-link.active-link {
+  color: #E8C766 !important;
+}
+
+#mobile-menu.menu-open {
+  transform: translateX(0);
+}
+
+/* ---------- Hero ---------- */
+.hero-img {
+  animation: hero-zoom 18s ease-out forwards;
+}
+@keyframes hero-zoom {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2.2s infinite;
+}
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ---------- Islamic geometric pattern overlay ---------- */
+.pattern-overlay {
+  background-repeat: repeat;
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.pattern-overlay::before {
+  content: "";
+}
+
+/* Fallback: draw pattern via CSS since background-image:url(#id) needs same-document SVG support */
+.pattern-overlay {
+  background-image:
+    linear-gradient(45deg, transparent 48%, currentColor 49%, currentColor 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, currentColor 49%, currentColor 51%, transparent 52%);
+  background-size: 60px 60px;
+  opacity: 1;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .hero-img, .animate-bounce-slow, .whatsapp-ping {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ---------- Card hover ---------- */
+.card-hover {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(11, 61, 46, 0.25);
+}
+
+/* ---------- Destination card ---------- */
+.dest-card {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  height: 340px;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.25);
+}
+.dest-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.dest-card:hover img {
+  transform: scale(1.12);
+}
+.dest-card .dest-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,42,32,0.92) 0%, rgba(8,42,32,0.25) 55%, rgba(8,42,32,0) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: white;
+}
+.dest-card .dest-btn {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.35s ease, max-height 0.35s ease, margin-top 0.35s ease;
+}
+.dest-card:hover .dest-btn {
+  opacity: 1;
+  max-height: 60px;
+  margin-top: 0.75rem;
+}
+
+/* ---------- Package card ---------- */
+.package-card {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 26px -12px rgba(0,0,0,0.18);
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+.package-card img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+.package-card.hidden-package {
+  display: none;
+}
+
+/* ---------- Filter buttons ---------- */
+.filter-btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(11,61,46,0.2);
+  color: #0B3D2E;
+  background: white;
+  transition: all 0.3s ease;
+}
+.filter-btn:hover {
+  border-color: #C9A227;
+}
+.filter-btn.active-filter {
+  background: #0B3D2E;
+  border-color: #0B3D2E;
+  color: white;
+}
+
+/* ---------- Counter ---------- */
+.counter {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Testimonials ---------- */
+.testi-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.testi-slide.active-slide {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  position: relative;
+}
+.testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.testi-dot.active-dot {
+  background: #C9A227;
+  width: 22px;
+}
+
+/* ---------- Gallery ---------- */
+.gallery-item {
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  break-inside: avoid;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-item::after {
+  content: "\f00e";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  background: rgba(11,61,46,0.35);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* ---------- FAQ ---------- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 240px;
+}
+.faq-item.open .faq-question i {
+  transform: rotate(180deg);
+}
+
+/* ---------- Form ---------- */
+.form-input {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  background: #FBFAF7;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #0B3D2E;
+  box-shadow: 0 0 0 3px rgba(11,61,46,0.12);
+}
+.form-input.input-error {
+  border-color: #DC2626;
+}
+.form-error {
+  min-height: 1rem;
+  font-size: 0.75rem;
+  color: #DC2626;
+  margin-top: 0.25rem;
+}
+#form-success.show {
+  display: flex;
+}
+
+/* ---------- WhatsApp float ---------- */
+.whatsapp-ping {
+  animation: whatsapp-pulse 2.4s infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+@keyframes whatsapp-pulse {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+/* ---------- Toast ---------- */
+#toast.show-toast {
+  transform: translateX(0);
+}
+
+/* ---------- Focus visibility ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #C9A227;
+  outline-offset: 2px;
+}
+
+/* ---------- Scrollbar (subtle) ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #0B3D2E;
+  border-radius: 999px;
+}
